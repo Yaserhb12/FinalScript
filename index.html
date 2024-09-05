@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="Styles/cs.css">
+    <script src="javascript/js.js" defer></script>
+
+
+    <body>
+        <header>
+            <h1>Phone Book</h1>
+        </header>
+        <div class="container">
+            <h4 id="peopleCount">6 People</h4>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+    
+            </div>
+            <div id="searchActivePage" style="display: none;"></div>
+            <div class="actions">
+                <button id="darkModeToggle"><img src="images/moon.png" alt=""> </button>
+
+                <button class="add icon" onclick="openPopup()" title="Add Contact">
+                    <img src="images/add.png" alt="Add User">
+                </button>
+                <button class="delete icon" onclick="deleteAllContacts()" title="Delete All Contacts">
+                    <img src="images/delete.png" alt="Delete All">
+                </button>
+            </div>
+            <ul class="list contact-list"></ul>
+        </div>
+        <div class="modal" id="myModal" onclick="closeModal(event)">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModalBtn">&times;</span>
+                <h2 id="popupTitle">Add/Edit Contact</h2>
+                <input type="hidden" id="contactIndex">
+                <input type="text" id="inputUserName" placeholder="Name">
+                <input type="text" id="inputUserPhone" placeholder="Phone">
+                <input type="text" id="inputUserAddress" placeholder="Address">
+                <input type="text" id="inputUserEmail" placeholder="Email">
+                <input type="file" id="inputUserPhoto" title="Upload Photo">
+                <button onclick="saveContact()">Save</button>
+            </div>
+        </div>
+        <div class="modal" id="infoModal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeInfoPopup()">&times;</span>
+                <h2>Contact Info</h2>
+                <p id="infoName"></p>
+                <p id="infoPhone"></p>
+                <p id="infoAddress"></p>
+                <p id="infoEmail"></p>
+            </div>
+        </div>
+        <input type="text" id="inputUserPhone" maxlength="10" pattern="\d*" title="Please enter only digits" />
+
+        <footer>Desind By Yaser & Jana||©2024 All rights reserved.</footer>
+    </body>
+</html>

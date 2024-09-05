@@ -1,0 +1,371 @@
+body {
+
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 550px; 
+  width: 90%; 
+  margin: 40px auto;
+  padding: 20px;
+  background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);  background-size: cover;
+}
+
+header {
+  background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);  background-size: cover;
+  text-align: center;
+  font-size: 24px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);  background-size: cover;
+  border-top: 1px solid #ddd;
+  font-size: 16px;
+
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.contact-item:hover {
+  background-color: rgba(137, 147, 210, 0.8);
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.contact-img:hover {
+  transform: scale(1.1);
+}
+
+.contact-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions button {
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.actions button img {
+  width: 30px;
+  height: 30px;
+}
+
+.search-bar input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  transition: border 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+  border: 1px solid #888;
+}
+
+
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    font-size: 14px;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .contact-item {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode .contact-info {
+  color: #ffffff;
+}
+
+.dark-mode .actions button {
+  background-color: #333;
+}
+
+.dark-mode .actions button img {
+  filter: invert(1);
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode #searchInput {
+  background-color: #333;
+  color: #ffffff;
+}
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+    width: 85%;
+    padding: 15px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    font-size: 15px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 75%;
+    padding: 20px;
+  }
+
+  .contact-item {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .contact-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+
+  .contact-info {
+    font-size: 16px;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .container {
+    width: 70%;
+    padding: 25px;
+  }
+
+  .contact-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .contact-info {
+    font-size: 17px;
+  }
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+.modal-content button:hover {
+  background-color: #45a049;
+}
+/* Body in dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+  background-image: none; /* Remove gradient in dark mode */
+}
+
+/* Dark mode styles for contact items */
+.dark-mode .contact-item {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode .contact-info {
+  color: #ffffff;
+}
+
+/* Dark mode styles for actions buttons */
+.dark-mode .actions button {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.dark-mode .actions button img {
+  filter: invert(1);
+}
+
+/* Dark mode styles for input fields */
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode #searchInput {
+  background-color: #333;
+  color: #ffffff;
+}
+
+/* Dark mode for modal */
+.dark-mode .modal-content {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode .modal-content input[type="text"],
+.dark-mode .modal-content input[type="file"] {
+  background-color: #444;
+  color: #ffffff;
+  border: 1px solid #666;
+}
+
+.dark-mode .modal-content button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.dark-mode .modal-content button:hover {
+  background-color: #45a049;
+}
+
+/* Dark mode for footer */
+.dark-mode footer {
+  background-color: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+/* Dark mode for the header */
+.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+/* Ensure contrast and readability */
+.dark-mode .contact-name {
+  color: #ffffff;
+}
